@@ -1,20 +1,29 @@
-<html>
-<body>
-<h4>ListServ</h4>
-{% with messages = get_flashed_messages() %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endwith %}
+{% extends 'base.html' %}
+
+{% block content %}
+
 <form method="POST" action="/subscribe">
+<label for='email'>Subscribe: </label>
 {{ form.email }}
 <input type="submit" value="Submit"> 
 </form>
 Want to unsubscribe? click <a href='/unsub'>here</a>
 <br>
+<br>
 {% for mem in lst %}
 {{ mem }}
 <br>
 {% endfor %}
-</body>
-</html>
+<br>
+<p id=rules >Rules</p>
+<div id=rule-box>
+No links, No fighting no biting, no screaming no...
+</div>
+<script>
+$('#rules').click(function() {
+  $('#rule-box').slideDown('slow', function() {
+    // Animation complete.
+  });
+});
+</script>
+{% endblock %}

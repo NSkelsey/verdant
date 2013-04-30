@@ -1,8 +1,3 @@
-{% with messages = get_flashed_messages() %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endwith %}
 <form method="POST" action="/unsub">
 <label for="email">Put in your email to unsub</label>{{ form.email }}
 <input type="submit" value="Submit"> 

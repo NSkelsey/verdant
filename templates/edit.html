@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if form is defined %}
+<form method="POST" action="/mod-real-ones">
+{{ form.subject }}
+{{ form.text }}
+{{ form.approved }}
+<input type="submit" value="Submit"> 
+</form> 
+{% endif %}
+{% endblock %}
